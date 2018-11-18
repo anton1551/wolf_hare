@@ -86,14 +86,10 @@ def main():
             a_y = state.y_h-state.y_w
     
             u =  a_x/math.sqrt(a_x**2+a_y**2)*state.velocity_w*state.delta_t 
-            v =  a_y/math.sqrt(a_x**2+a_y**2)*state.velocity_w*state.delta_t 
-            u_h = 2
-            v_h = 0
+            v =  a_y/math.sqrt(a_x**2+a_y**2)*state.velocity_w*state.delta_t             
             plt.cla()
             plt.plot(x_w, y_w, ".r", label = "Wolf")
-            plt.plot(x_h, y_h, ".g", label = "Hare")
-            plt.quiver(state.x_w_old, state.y_w_old, u, v, color = 'r', scale = 12)
-            plt.quiver(state.x_h_old, state.y_h_old, u_h, v_h, color = 'g', scale = 20)            
+            plt.plot(x_h, y_h, ".g", label = "Hare")                        
             plt.axis("equal")
             plt.grid(True)
             plt.title("Time, s:" + str(time)[:4])            
